@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Biblioteca Web
 
-## Getting Started
+Frontend do sistema de gerenciamento de biblioteca com controle de empréstimos, construído com Next.js e Tailwind CSS.
 
-First, run the development server:
+**Demo ao vivo:** https://biblioteca-web-theta.vercel.app/login
+
+> Servidor gratuito (Render free tier) — primeira requisição pode levar ~50s para acordar.
+
+## Tecnologias
+
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS
+- Deploy: Vercel
+
+## Funcionalidades
+
+- Autenticação (login e cadastro)
+- Autores — cadastro e remoção
+- Livros — cadastro com autor, ISBN e ano
+- Exemplares — cadastro de cópias físicas de cada livro com código único
+- Membros — cadastro com e-mail e telefone
+- Empréstimos — criar selecionando exemplar disponível e membro, registrar devolução, destaque para atrasos
+- Redirecionamento automático para login quando não autenticado
+
+## Fluxo de uso
+
+Autores → Livros → Exemplares → Membros → Empréstimos
+
+## Como rodar localmente
+
+```bash
+npm install
+```
+
+Crie o arquivo `.env.local`:
+
+```env
+NEXT_PUBLIC_API_URL=https://biblioteca-api-8dtt.onrender.com/api
+```
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse: http://localhost:3001
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Consome a [Biblioteca API](https://github.com/joaomangini/biblioteca-api) — NestJS + Prisma + PostgreSQL (Neon).
