@@ -17,6 +17,7 @@ export default function Nav() {
         <Link href="/livros" className="text-sm text-zinc-600 hover:text-violet-700">Livros</Link>
         <Link href="/autores" className="text-sm text-zinc-600 hover:text-violet-700">Autores</Link>
         <Link href="/membros" className="text-sm text-zinc-600 hover:text-violet-700">Membros</Link>
+        <Link href="/exemplares" className="text-sm text-zinc-600 hover:text-violet-700">Exemplares</Link>
         <Link href="/emprestimos" className="text-sm text-zinc-600 hover:text-violet-700">Empréstimos</Link>
       </div>
       <button onClick={logout} className="text-sm text-zinc-500 hover:text-zinc-800">Sair</button>
